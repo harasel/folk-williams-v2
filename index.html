@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="FWFM_Logo.png" type="image/x-icon">
+<title>Folk Williams Financial Management — Financial Clarity for Every Stage of Wealth</title>
+<meta name="description" content="Folk Williams Financial Management offers premium tax preparation, strategic accounting, and business management for individuals, growing businesses, and high-net-worth clients." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #0a2e4d;
+    --ocean-deep: #051a2e;
+    --ocean-mid: #14416b;
+    --accent: #06a5cc;       /* drawn from the logo */
+    --accent-soft: #6dc8dc;
+    --cream: #f6f0e4;
+    --cream-warm: #efe5d2;
+    --sand: #dccfb4;
+    --sand-deep: #b8a784;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --white: #ffffff;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max: 1280px;
+    --transition: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  ::selection { background: var(--ocean); color: var(--cream); }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 7px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all .5s var(--transition);
+    background: transparent;
+  }
+  .nav.scrolled {
+    background: rgba(246, 240, 228, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 7px 48px;
+    border-bottom: 1px solid rgba(10, 46, 77, 0.08);
+  }
+  .nav-brand { display: flex; align-items: center; }
+  .nav-brand svg { width: 36px; height: 36px; }
+  .brand-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: var(--ocean);
+    line-height: 1.1;
+  }
+  .brand-text small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 38px; align-items: center; }
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    color: var(--ocean);
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 0; height: 1px; background: var(--accent);
+    transition: width .4s var(--transition);
+  }
+  .nav-links a:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-links .nav-cta {
+    padding: 11px 22px;
+    border: 1px solid var(--ocean);
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .4s var(--transition);
+    background: transparent;
+    cursor: pointer;
+    color: var(--ocean);
+  }
+  .nav-links .nav-cta:hover { background: var(--ocean); color: var(--cream); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ocean); margin: 5px 0; transition: .3s; }
+
+
+
+
+
+  .nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width .3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-cta::after {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 140px 48px 100px;
+    overflow: hidden;
+  }
+  .hero-bg-shape {
+    position: absolute;
+    top: -10%; right: -15%;
+    width: 70vw; height: 110vh;
+    opacity: 0.35;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0; pointer-events: none; opacity: .4;
+  }
+  .hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--ocean); font-weight: 500;
+    margin-bottom: 36px;
+  }
+  .eyebrow::before {
+    content: ''; width: 36px; height: 1px; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1.02;
+    font-weight: 400;
+    color: var(--ocean);
+    letter-spacing: -1.5px;
+    margin-bottom: 40px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .hero-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ocean-mid);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 520px;
+  }
+  .hero-sub span { display: block; }
+  .hero-sub span + span { margin-top: 4px; }
+  .cta-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 34px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .5s var(--transition);
+    border: 1px solid transparent;
+    font-family: var(--sans);
+  }
+  .btn-primary { background: var(--ocean); color: var(--cream); }
+  .btn-primary:hover { background: var(--ocean-deep); transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(10,46,77,.4); }
+  .btn-secondary { background: transparent; color: var(--ocean); border-color: var(--ocean); }
+  .btn-secondary:hover { background: var(--ocean); color: var(--cream); }
+  .btn .arrow { transition: transform .4s var(--transition); }
+  .btn:hover .arrow { transform: translateX(5px); }
+
+  /* hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    width: 100%;
+  }
+  .hero-card {
+    position: absolute;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 28px;
+    box-shadow: 0 30px 60px -20px rgba(10,46,77,.25);
+  }
+  .hero-card-1 {
+    top: 8%; right: 0; width: 70%;
+    background: var(--ocean);
+    color: var(--cream);
+    aspect-ratio: 4/5;
+    display: flex; flex-direction: column; justify-content:start;
+  }
+  .hero-card-1 .num {
+    font-family: var(--serif);
+    font-size: 88px;
+    line-height: 1;
+    color: var(--accent-soft);
+  }
+  .hero-card-1 .lbl {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    opacity: .8;
+  }
+  .hero-card-1 .ttl {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.3;
+    margin-top: 12px;
+  }
+  .hero-card-2 {
+    bottom: 6%; left: 0; width: 62%;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+  }
+  .hero-card-2 .tag {
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  .hero-card-2 .quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ocean);
+  }
+  .hero-card-2 .sig {
+    margin-top: 18px; font-size: 11px; letter-spacing: 1px;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 48px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ocean); font-weight: 500;
+    z-index: 3;
+  }
+  .hero-scroll .line {
+    width: 60px; height: 1px; background: var(--ocean); position: relative; overflow: hidden;
+  }
+  .hero-scroll .line::after {
+    content: ''; position: absolute; left: -60px; top: 0; width: 30px; height: 100%;
+    background: var(--accent); animation: scrollLine 2.4s infinite var(--transition);
+  }
+  @keyframes scrollLine {
+    0% { left: -30px; } 100% { left: 60px; }
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section { padding: 130px 48px; position: relative; }
+  .container { max-width: var(--max); margin: 0 auto; }
+  .section-head { margin-bottom: 80px; max-width: 720px; }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .section-eyebrow::before {
+    content: ''; width: 36px; height: 1px; background: var(--accent);
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--ocean);
+    letter-spacing: -1px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-intro {
+    font-size: 17px; line-height: 1.7; color: var(--muted);
+    margin-top: 24px; max-width: 600px;
+  }
+
+  /* ===== SERVICES ===== */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .service-card {
+    background: var(--cream);
+    padding: 50px 42px 44px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: all .6s var(--transition);
+    cursor: pointer;
+    min-height: 480px;
+    display: flex; flex-direction: column;
+  }
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, var(--ocean) 0%, var(--ocean-deep) 100%);
+    transform: translateY(100%);
+    transition: transform .7s var(--transition);
+    z-index: 0;
+  }
+  .service-card:hover::before { transform: translateY(0); }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px -20px rgba(10,46,77,.3); }
+  .service-card > * { position: relative; z-index: 1; transition: color .5s var(--transition); }
+  .service-num {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--sand-deep);
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+  .service-card:hover .service-num { color: var(--accent-soft); }
+  .service-icon {
+    width: 64px; height: 64px;
+    color: var(--ocean);
+    margin-bottom: 36px;
+    transition: color .5s var(--transition);
+  }
+  .service-card:hover .service-icon { color: var(--accent-soft); }
+  .service-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--ocean);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .service-card:hover .service-title { color: var(--cream); }
+  .service-sub {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 24px;
+  }
+  .service-card:hover .service-sub { color: var(--accent-soft); }
+  .service-desc {
+    font-size: 15px; line-height: 1.7; color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .service-card:hover .service-desc { color: rgba(246,240,228,.85); }
+  .service-list {
+    list-style: none; margin-bottom: 32px;
+  }
+  .service-list li {
+    font-size: 13px; color: var(--ocean); padding: 8px 0;
+    border-top: 1px solid var(--sand);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .service-card:hover .service-list li { color: var(--cream); border-color: rgba(246,240,228,.15); }
+  .service-list li::before {
+    content: '—'; color: var(--accent);
+  }
+  .service-link {
+    margin-top: auto;
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--ocean); font-weight: 600;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .service-card:hover .service-link { color: var(--accent-soft); }
+  .service-link svg { transition: transform .4s var(--transition); }
+  .service-card:hover .service-link svg { transform: translateX(6px); }
+
+  /* ===== PATHWAY ===== */
+  .pathway {
+    background: var(--ocean-deep);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .pathway::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .pathway .section-title { color: var(--cream); }
+  .pathway .section-intro { color: rgba(246,240,228,.7); }
+  .pathway .section-eyebrow { color: var(--accent-soft); }
+  .pathway .section-eyebrow::before { background: var(--accent-soft); }
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .path-card {
+    position: relative;
+    border: 1px solid rgba(246,240,228,.12);
+    border-radius: 4px;
+    padding: 44px 32px;
+    min-height: 460px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .6s var(--transition);
+    background: linear-gradient(180deg, rgba(246,240,228,.02), rgba(246,240,228,0));
+    display: flex; flex-direction: column;
+  }
+  .path-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(6,165,204,.25), transparent 60%);
+    opacity: 0; transition: opacity .6s var(--transition);
+    pointer-events: none;
+  }
+  .path-card:hover { border-color: var(--accent); transform: translateY(-6px); }
+  .path-card:hover::after { opacity: 1; }
+  .path-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent-soft);
+    margin-bottom: 28px;
+  }
+  .path-icon {
+    width: 56px; height: 56px;
+    color: var(--accent-soft);
+    margin-bottom: 28px;
+    transition: transform .6s var(--transition);
+  }
+  .path-card:hover .path-icon { transform: scale(1.1) rotate(-4deg); }
+  .path-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .path-tag {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent-soft); margin-bottom: 22px; font-weight: 600;
+  }
+  .path-hover {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .6s var(--transition);
+    margin-top: auto;
+  }
+  .path-card:hover .path-hover {
+    max-height: 300px;
+    opacity: 1;
+  }
+  .path-hover-divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin-bottom: 20px;
+  }
+  .path-hover p {
+    font-size: 14px; line-height: 1.65; color: rgba(246,240,228,.8);
+    margin-bottom: 16px;
+  }
+  .path-hover ul { list-style: none; }
+  .path-hover li {
+    font-size: 12px; color: var(--cream);
+    padding: 5px 0; padding-left: 18px;
+    position: relative;
+  }
+  .path-hover li::before {
+    content: ''; position: absolute; left: 0; top: 13px;
+    width: 8px; height: 1px; background: var(--accent-soft);
+  }
+  .path-static {
+    font-size: 14px; line-height: 1.6; color: rgba(246,240,228,.6);
+    transition: opacity .4s var(--transition);
+  }
+  .path-card:hover .path-static { opacity: 0; max-height: 0; margin: 0; }
+
+  /* ===== TRUST ===== */
+  .trust {
+    background: var(--cream);
+    padding: 140px 48px;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .trust-visual {
+    position: relative;
+    aspect-ratio: 1/1.1;
+  }
+  .trust-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--sand);
+    margin-top: 50px;
+    border: 1px solid var(--sand);
+  }
+  .stat {
+    background: var(--cream);
+    padding: 36px 28px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ocean);
+    font-weight: 400;
+    letter-spacing: -1px;
+  }
+  .stat-num em { font-style: italic; color: var(--accent); }
+  .stat-label {
+    margin-top: 14px;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+  }
+  .credentials {
+    margin-top: 40px;
+    display: flex; flex-wrap: wrap; gap: 14px;
+  }
+  .cred {
+    padding: 10px 18px;
+    border: 1px solid var(--sand-deep);
+    border-radius: 50px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--ocean); font-weight: 500;
+  }
+
+  /* ===== INSIGHTS ===== */
+  .insights { background: var(--white); }
+  .insights-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 70px; flex-wrap: wrap; gap: 30px; }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 32px;
+  }
+  .insight {
+    cursor: pointer;
+    transition: transform .5s var(--transition);
+    display: flex; flex-direction: column;
+  }
+  .insight:hover { transform: translateY(-6px); }
+  .insight-img {
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .insight-img svg { width: 100%; height: 100%; transition: transform .8s var(--transition); }
+  .insight:hover .insight-img svg { transform: scale(1.05); }
+  .insight.featured .insight-img { aspect-ratio: 5/4; }
+  .insight-meta {
+    display: flex; gap: 14px; align-items: center;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  .insight-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--sand-deep); }
+  .insight-meta .date { color: var(--muted); font-weight: 500; letter-spacing: 1.5px; }
+  .insight-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--ocean);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .insight.featured .insight-title { font-size: 34px; }
+  .insight-excerpt {
+    font-size: 15px; line-height: 1.65; color: var(--muted);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
+    color: var(--cream);
+    padding: 160px 48px 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-bg {
+    position: absolute; inset: 0; opacity: .12; pointer-events: none;
+  }
+  .contact-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 90px;
+    align-items: start;
+  }
+  .contact h2 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 5.5vw, 76px);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    margin-bottom: 36px;
+  }
+  .contact h2 em { font-style: italic; color: var(--accent-soft); }
+  .contact-lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(246,240,228,.85);
+    line-height: 1.6;
+    margin-bottom: 60px;
+    max-width: 460px;
+  }
+  .contact-meta {
+    display: grid; gap: 30px;
+    border-top: 1px solid rgba(246,240,228,.15);
+    padding-top: 40px;
+  }
+  .meta-row { display: flex; flex-direction: column; gap: 6px; }
+  .meta-row .lbl {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent-soft); font-weight: 600;
+  }
+  .meta-row .val {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--cream);
+  }
+  .contact-form {
+    background: rgba(246,240,228,.04);
+    border: 1px solid rgba(246,240,228,.12);
+    padding: 50px 44px;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+  }
+  .form-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--cream);
+  }
+  .form-sub {
+    font-size: 13px; color: rgba(246,240,228,.6);
+    margin-bottom: 36px;
+  }
+  .field { margin-bottom: 24px; }
+  .field label {
+    display: block;
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent-soft); font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(246,240,228,.25);
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--cream);
+    font-family: var(--sans);
+    transition: border-color .3s;
+    outline: none;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: rgba(246,240,228,.4); }
+  .field select option { background: var(--ocean-deep); color: var(--cream); }
+  .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--accent); }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .contact-form .btn-primary { width: 100%; justify-content: center; background: var(--accent); margin-top: 12px; }
+  .contact-form .btn-primary:hover { background: var(--accent-soft); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ocean-deep);
+    color: rgba(246,240,228,.6);
+    padding: 50px 48px;
+    border-top: 1px solid rgba(246,240,228,.08);
+  }
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .footer-inner a { transition: color .3s; }
+  .footer-inner a:hover { color: var(--accent-soft); }
+  .footer-links { display: flex; gap: 30px; }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s var(--transition), transform 1s var(--transition);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .9s var(--transition), transform .9s var(--transition);
+  }
+  .reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.in > *:nth-child(1) { transition-delay: .05s; }
+  .reveal-stagger.in > *:nth-child(2) { transition-delay: .15s; }
+  .reveal-stagger.in > *:nth-child(3) { transition-delay: .25s; }
+  .reveal-stagger.in > *:nth-child(4) { transition-delay: .35s; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .nav, .nav.scrolled { padding: 18px 28px; }
+    section { padding: 90px 28px; }
+    .hero { padding: 130px 28px 80px; }
+    .hero-scroll { left: 28px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+    .hero-visual { max-width: 480px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .pathway-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: 1fr; gap: 60px; }
+    .insights-grid { grid-template-columns: 1fr; }
+    .contact { padding: 100px 28px 80px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--cream); padding: 28px;
+      border-bottom: 1px solid var(--sand);
+      gap: 22px;
+    }
+    .pathway-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 36px 24px; }
+    .hero h1 { font-size: 44px; }
+    .stat-num { font-size: 42px; }
+    .insights-head { flex-direction: column; align-items: flex-start; }
+    /* Hover-only on touch: reveal info by default */
+    .path-card .path-hover { max-height: 300px; opacity: 1; }
+    .path-card .path-static { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================== NAV ====================== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand" aria-label="Folk Williams Financial Management">
+    <!-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#06a5cc" d="M20 10 L40 10 C28 14 22 22 20 32 Z"/>
+      <path fill="#06a5cc" d="M80 10 L60 10 C72 14 78 22 80 32 Z"/>
+      <path fill="#06a5cc" d="M20 35 C30 35 35 40 35 50 L35 68 C35 78 32 84 26 88 C22 84 20 78 20 68 Z"/>
+      <path fill="#06a5cc" d="M80 35 C70 35 65 40 65 50 L65 68 C65 78 68 84 74 88 C78 84 80 78 80 68 Z"/>
+      <path fill="#06a5cc" d="M50 4 C44 10 42 18 42 28 L42 72 C42 82 40 88 35 94 C44 92 50 84 50 72 L50 28 C50 18 52 12 58 6 C56 4 53 4 50 4 Z"/>
+      <path fill="#06a5cc" d="M50 4 C56 10 58 18 58 28 L58 72 C58 82 60 88 65 94 C56 92 50 84 50 72 Z"/>
+    </svg> -->
+    <img src="FWFM_Logo.png" alt="Logo" style="width: 60px; height: auto;">
+    <span class="brand-text">
+      Folk Williams
+      <small>Financial Management</small>
+    </span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#pathway">Clients</a>
+    <a class="nav-link" href="#trust">About</a>
+    <a class="nav-link" href="#insights">Insights</a>
+    <a class="nav-link" href="folk-williams-business-management.html">Business Management</a>
+    <a href="#contact" class="nav-cta">Schedule Consultation</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<header class="hero">
+  <svg class="hero-bg-shape" id="heroShape" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0a2e4d" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0.04"/>
+      </linearGradient>
+      <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#06a5cc" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <circle cx="450" cy="280" r="260" fill="url(#g1)"/>
+    <circle cx="380" cy="500" r="180" fill="url(#g2)"/>
+    <circle cx="300" cy="200" r="2" fill="#06a5cc"/>
+    <circle cx="500" cy="600" r="3" fill="#0a2e4d"/>
+  </svg>
+
+  <svg class="hero-grid-lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="240" y1="0" x2="240" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+    <line x1="720" y1="0" x2="720" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+    <line x1="1200" y1="0" x2="1200" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <div class="eyebrow">Est. Financial Stewardship</div>
+      <h1>Financial Clarity<br>for <em>Every Stage</em><br>of Wealth.</h1>
+      <div class="hero-sub">
+        <span>Tax Preparation for Individuals & Families.</span>
+        <span>Strategic Accounting for Growing Enterprises.</span>
+        <span>Private Business Management for Complex Financial Lives.</span>
+      </div>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Begin a Confidential Conversation <span class="arrow">→</span></a>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="hero-card hero-card-1">
+        <div>
+          <div class="lbl">Since 1998</div>
+          <div class="num">27</div>
+        </div>
+        <div>
+          <div class="ttl">Years of trusted stewardship across three generations of clients.</div>
+        </div>
+      </div>
+      <div class="hero-card hero-card-2">
+        <div class="tag">Client Principle</div>
+        <div class="quote">"Wealth is not what you accumulate. It is the clarity with which you direct it."</div>
+        <div class="sig">— Folk Williams, Founding Principal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</header>
+
+<!-- ====================== SERVICES ====================== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Our Practice</div>
+      <h2 class="section-title">A complete financial discipline, <em>tailored</em> to your moment.</h2>
+      <p class="section-intro">From your first tax return to the management of multi-entity portfolios, we offer a continuum of service designed to scale with ambition — quietly, precisely, and with deliberate craft.</p>
+    </div>
+
+    <div class="services-grid reveal-stagger">
+
+      <article class="service-card">
+        <div class="service-num">01 / Foundational</div>
+        <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <rect x="14" y="8" width="36" height="48" rx="2"/>
+          <line x1="22" y1="20" x2="42" y2="20"/>
+          <line x1="22" y1="28" x2="42" y2="28"/>
+          <line x1="22" y1="36" x2="34" y2="36"/>
+          <path d="M38 44 L44 50 L54 38" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="service-sub">For Everyone</div>
+        <h3 class="service-title">Tax Preparation For Individuals & Families</h3>
+        <p class="service-desc">Meticulous filing for individuals and families. Every credit identified, every deduction substantiated, every return reviewed by a senior practitioner.</p>
+        <ul class="service-list">
+          <li>Individual & Joint Returns</li>
+          <li>Multi-State Filings</li>
+          <li>Year-Round Tax Advisory</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More
+          <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M1 5h20m0 0L17 1m4 4l-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-num">02 / Strategic</div>
+        <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M8 52 L24 36 L34 44 L56 18" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 18 L56 18 L56 30" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="8" y1="56" x2="56" y2="56"/>
+        </svg>
+        <div class="service-sub">For Growing Businesses</div>
+        <h3 class="service-title">Accounting Services</h3>
+        <p class="service-desc">Beyond bookkeeping — a strategic financial architecture that gives founders true command of cash flow, margins, and the next ambitious decision.</p>
+        <ul class="service-list">
+          <li>Monthly Books & Reporting</li>
+          <li>Payroll & Compliance</li>
+          <li>CFO Advisory & Forecasting</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More
+          <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M1 5h20m0 0L17 1m4 4l-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-num">03 / Bespoke</div>
+        <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <circle cx="32" cy="32" r="22"/>
+          <circle cx="32" cy="32" r="14"/>
+          <circle cx="32" cy="32" r="3" fill="currentColor"/>
+          <line x1="32" y1="4" x2="32" y2="14"/>
+          <line x1="32" y1="50" x2="32" y2="60"/>
+          <line x1="4" y1="32" x2="14" y2="32"/>
+          <line x1="50" y1="32" x2="60" y2="32"/>
+        </svg>
+        <div class="service-sub">For High-Net-Worth Clients</div>
+        <h3 class="service-title">Business Management</h3>
+        <p class="service-desc">A discreet, end-to-end financial office. We coordinate income, assets, advisors and lifestyle so you may focus entirely on what only you can do.</p>
+        <ul class="service-list">
+          <li>Personal CFO & Bill Pay</li>
+          <li>Multi-Entity Coordination</li>
+          <li>Legacy & Succession Planning</li>
+        </ul>
+        <a href="folk-williams-business-management.html" class="service-link">Learn More
+          <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M1 5h20m0 0L17 1m4 4l-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PATHWAY ====================== -->
+<section class="pathway" id="pathway">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Business Management Pathway</div>
+      <h2 class="section-title">Four clients. Four <em>pathways.</em> One standard of care.</h2>
+      <p class="section-intro">Our business management practice is shaped around the lives of the people we serve. Hover any pathway to see how we structure your financial life.</p>
+    </div>
+
+    <div class="pathway-grid reveal-stagger">
+
+      <article class="path-card">
+        <div class="path-num">01</div>
+        <svg class="path-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M28 6 L34 22 L52 22 L38 32 L44 50 L28 40 L12 50 L18 32 L4 22 L22 22 Z" stroke-linejoin="round"/>
+        </svg>
+        <div class="path-tag">Athletes · Artists · Executives</div>
+        <h3 class="path-title">Elite Performers</h3>
+        <p class="path-static">Concentrated income, brief windows, and lives lived under scrutiny.</p>
+        <div class="path-hover">
+          <div class="path-hover-divider"></div>
+          <p>We architect financial systems that capture peak-earning years and protect them across the long arc of a career.</p>
+          <ul>
+            <li>Endorsement & royalty management</li>
+            <li>Career transition planning</li>
+            <li>Privacy-first banking & travel</li>
+            <li>Family office coordination</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <div class="path-num">02</div>
+        <svg class="path-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <rect x="6" y="20" width="44" height="30" stroke-linejoin="round"/>
+          <path d="M20 20 V12 H36 V20" stroke-linejoin="round"/>
+          <line x1="6" y1="32" x2="50" y2="32"/>
+          <circle cx="28" cy="40" r="2.5" fill="currentColor"/>
+        </svg>
+        <div class="path-tag">C-Suite · Board Members</div>
+        <h3 class="path-title">Corporate Leaders</h3>
+        <p class="path-static">Equity compensation, governance scrutiny, and complex tax surfaces.</p>
+        <div class="path-hover">
+          <div class="path-hover-divider"></div>
+          <p>We translate equity awards, deferred compensation, and 10b5-1 plans into a coherent personal balance sheet.</p>
+          <ul>
+            <li>RSU, ISO & NQSO strategy</li>
+            <li>Section 16 & blackout coordination</li>
+            <li>Charitable & DAF structuring</li>
+            <li>Cross-jurisdiction tax planning</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <div class="path-num">03</div>
+        <svg class="path-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M8 44 V24 L28 10 L48 24 V44 Z" stroke-linejoin="round"/>
+          <path d="M22 44 V32 H34 V44" stroke-linejoin="round"/>
+          <line x1="28" y1="18" x2="28" y2="22"/>
+        </svg>
+        <div class="path-tag">Founders · Operators</div>
+        <h3 class="path-title">Wealth Creators</h3>
+        <p class="path-static">First-generation wealth from a business you built with your hands.</p>
+        <div class="path-hover">
+          <div class="path-hover-divider"></div>
+          <p>We separate the business balance sheet from the personal one and prepare you for the inevitable liquidity event.</p>
+          <ul>
+            <li>Entity structuring & QSBS strategy</li>
+            <li>Pre-transaction tax design</li>
+            <li>Owner compensation & distributions</li>
+            <li>Post-exit wealth integration</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <div class="path-num">04</div>
+        <svg class="path-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M28 8 C20 8 16 14 16 22 C16 30 22 32 28 36 C34 32 40 30 40 22 C40 14 36 8 28 8 Z" stroke-linejoin="round"/>
+          <path d="M14 48 C14 42 20 38 28 38 C36 38 42 42 42 48"/>
+          <circle cx="28" cy="22" r="3" fill="currentColor"/>
+        </svg>
+        <div class="path-tag">Families · Foundations</div>
+        <h3 class="path-title">Legacy Planners</h3>
+        <p class="path-static">Multi-generational stewardship of capital and the values behind it.</p>
+        <div class="path-hover">
+          <div class="path-hover-divider"></div>
+          <p>We act as the steady financial center for families navigating wealth across decades and generations.</p>
+          <ul>
+            <li>Trust & estate administration</li>
+            <li>Family governance & education</li>
+            <li>Philanthropic strategy</li>
+            <li>Generational tax efficiency</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TRUST ====================== -->
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="trust-grid">
+
+      <div class="trust-visual reveal">
+        <svg viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="trustG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0a2e4d"/>
+              <stop offset="100%" stop-color="#14416b"/>
+            </linearGradient>
+            <linearGradient id="trustAccent" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#06a5cc"/>
+              <stop offset="100%" stop-color="#6dc8dc"/>
+            </linearGradient>
+          </defs>
+          <!-- editorial collage -->
+          <rect x="30" y="30" width="280" height="360" fill="url(#trustG)" rx="2"/>
+          <!-- abstract architectural lines suggesting institutional craft -->
+          <g stroke="#6dc8dc" stroke-width="0.5" opacity="0.35">
+            <line x1="60" y1="80" x2="280" y2="80"/>
+            <line x1="60" y1="130" x2="280" y2="130"/>
+            <line x1="60" y1="180" x2="280" y2="180"/>
+            <line x1="60" y1="230" x2="280" y2="230"/>
+            <line x1="60" y1="280" x2="280" y2="280"/>
+            <line x1="60" y1="330" x2="280" y2="330"/>
+          </g>
+          <!-- bar chart abstraction in cream -->
+          <g fill="#f6f0e4" opacity="0.92">
+            <rect x="70" y="280" width="22" height="50"/>
+            <rect x="100" y="240" width="22" height="90"/>
+            <rect x="130" y="200" width="22" height="130"/>
+            <rect x="160" y="170" width="22" height="160"/>
+            <rect x="190" y="140" width="22" height="190"/>
+            <rect x="220" y="110" width="22" height="220"/>
+          </g>
+          <!-- arc accent -->
+          <path d="M70 100 Q170 60 270 100" stroke="#06a5cc" stroke-width="1.5" fill="none"/>
+          <circle cx="270" cy="100" r="4" fill="#06a5cc"/>
+
+          <!-- second editorial block (offset) -->
+          <rect x="220" y="220" width="250" height="290" fill="#f6f0e4" stroke="#dccfb4" rx="2"/>
+          <!-- inside the cream block: serif F mark -->
+          <text x="345" y="370" font-family="Playfair Display, serif" font-size="180" font-style="italic" font-weight="400" fill="#0a2e4d" text-anchor="middle">F</text>
+          <text x="345" y="430" font-family="Inter, sans-serif" font-size="10" letter-spacing="4" fill="#0a2e4d" text-anchor="middle">FOLK WILLIAMS</text>
+          <text x="345" y="448" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#6b6b6b" text-anchor="middle">EST. NINETEEN NINETY-EIGHT</text>
+          <line x1="290" y1="470" x2="400" y2="470" stroke="#06a5cc" stroke-width="1"/>
+
+          <!-- small accent circle bottom-left -->
+          <circle cx="80" cy="490" r="40" fill="url(#trustAccent)" opacity="0.85"/>
+          <circle cx="80" cy="490" r="22" fill="none" stroke="#f6f0e4" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="trust-content reveal">
+        <div class="section-eyebrow">Trust & Expertise</div>
+        <h2 class="section-title">Quiet rigor. <em>Unhurried</em> craft. Earned authority.</h2>
+        <p class="section-intro">For more than two decades we have served founders, performers, executives, and families with the discretion of a private office and the discipline of a national firm. Our work is measured in client tenure, not transaction count.</p>
+
+        <div class="trust-stats">
+          <div class="stat">
+            <div class="stat-num"><em>27</em></div>
+            <div class="stat-label">Years in Practice</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">$<em>2.4</em>B</div>
+            <div class="stat-label">Assets Under Stewardship</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num"><em>94</em>%</div>
+            <div class="stat-label">Client Retention</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num"><em>3</em>×</div>
+            <div class="stat-label">Generations Served</div>
+          </div>
+        </div>
+
+        <div class="credentials">
+          <span class="cred">CPA · AICPA Member</span>
+          <span class="cred">PFS Credentialed</span>
+          <span class="cred">NAEPC Council</span>
+          <span class="cred">Fiduciary Standard</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== INSIGHTS ====================== -->
+<section class="insights" id="insights">
+  <div class="container">
+    <div class="insights-head reveal">
+      <div>
+        <div class="section-eyebrow">The Folk Williams Journal</div>
+        <h2 class="section-title">Insights for the <em>considered</em> investor.</h2>
+      </div>
+      <a href="#" class="btn btn-secondary">Read the Journal <span class="arrow">→</span></a>
+    </div>
+
+    <div class="insights-grid reveal-stagger">
+
+      <article class="insight featured">
+        <div class="insight-img">
+          <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="i1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a2e4d"/>
+                <stop offset="100%" stop-color="#14416b"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="400" fill="url(#i1)"/>
+            <g stroke="#6dc8dc" stroke-width="0.5" opacity="0.4">
+              <path d="M0 320 Q125 280 250 290 T500 240" fill="none" stroke-width="1.5" stroke="#06a5cc"/>
+              <path d="M0 340 Q125 310 250 320 T500 280" fill="none"/>
+              <path d="M0 360 Q125 340 250 350 T500 320" fill="none"/>
+            </g>
+            <g fill="#f6f0e4" opacity="0.9">
+              <circle cx="120" cy="180" r="3"/>
+              <circle cx="240" cy="140" r="4"/>
+              <circle cx="360" cy="110" r="3"/>
+              <circle cx="440" cy="90" r="5" fill="#06a5cc"/>
+            </g>
+            <text x="40" y="80" font-family="Playfair Display, serif" font-size="42" font-style="italic" fill="#f6f0e4" opacity="0.18">2025</text>
+          </svg>
+        </div>
+        <div class="insight-meta">
+          <span>Tax Strategy</span>
+          <span class="dot"></span>
+          <span class="date">November 12, 2025</span>
+        </div>
+        <h3 class="insight-title">The Quiet Power of the Year-End Review: A Framework for Founders</h3>
+        <p class="insight-excerpt">As the calendar narrows, the most valuable tax move is rarely the most aggressive — it is the most considered. A short essay on the discipline of the December conversation.</p>
+      </article>
+
+      <article class="insight">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="320" fill="#efe5d2"/>
+            <circle cx="200" cy="160" r="90" fill="none" stroke="#0a2e4d" stroke-width="1"/>
+            <circle cx="200" cy="160" r="60" fill="none" stroke="#0a2e4d" stroke-width="1"/>
+            <circle cx="200" cy="160" r="30" fill="#06a5cc"/>
+            <line x1="200" y1="160" x2="280" y2="100" stroke="#0a2e4d" stroke-width="1"/>
+            <circle cx="280" cy="100" r="3" fill="#0a2e4d"/>
+            <text x="40" y="50" font-family="Playfair Display, serif" font-size="32" font-style="italic" fill="#0a2e4d" opacity="0.3">No. 14</text>
+          </svg>
+        </div>
+        <div class="insight-meta">
+          <span>Business Mgmt.</span>
+          <span class="dot"></span>
+          <span class="date">Oct 28, 2025</span>
+        </div>
+        <h3 class="insight-title">When the Liquidity Event Arrives: First Ninety Days</h3>
+        <p class="insight-excerpt">A practical sequence for founders moving from operator to steward of capital.</p>
+      </article>
+
+      <article class="insight">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="320" fill="#0a2e4d"/>
+            <g stroke="#f6f0e4" stroke-width="0.4" opacity="0.4">
+              <line x1="0" y1="80" x2="400" y2="80"/>
+              <line x1="0" y1="160" x2="400" y2="160"/>
+              <line x1="0" y1="240" x2="400" y2="240"/>
+              <line x1="100" y1="0" x2="100" y2="320"/>
+              <line x1="200" y1="0" x2="200" y2="320"/>
+              <line x1="300" y1="0" x2="300" y2="320"/>
+            </g>
+            <rect x="80" y="120" width="240" height="120" fill="#06a5cc" opacity="0.85"/>
+            <rect x="120" y="80" width="160" height="40" fill="#f6f0e4"/>
+            <text x="40" y="50" font-family="Playfair Display, serif" font-size="32" font-style="italic" fill="#f6f0e4" opacity="0.3">Essay</text>
+          </svg>
+        </div>
+        <div class="insight-meta">
+          <span>Accounting</span>
+          <span class="dot"></span>
+          <span class="date">Oct 14, 2025</span>
+        </div>
+        <h3 class="insight-title">The Books Are the Story: Why Founders Misread Their Own Numbers</h3>
+        <p class="insight-excerpt">A short meditation on the difference between accuracy and meaning in monthly reporting.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACT ====================== -->
+<section class="contact" id="contact">
+  <svg class="contact-bg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="cBg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#06a5cc" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="1100" cy="200" r="300" fill="url(#cBg)"/>
+    <circle cx="200" cy="600" r="220" fill="url(#cBg)"/>
+  </svg>
+
+  <div class="contact-inner">
+
+    <div class="contact-left reveal">
+      <div class="section-eyebrow" style="color: var(--accent-soft);">Begin the Conversation</div>
+      <h2>A private conversation about <em>where you are</em> — and where you intend to go.</h2>
+      <p class="contact-lead">Initial consultations are confidential, complimentary, and held in person at our offices or remotely. We respond to every inquiry within one business day.</p>
+
+      <div class="contact-meta">
+        <div class="meta-row">
+          <span class="lbl">By Appointment</span>
+          <span class="val">Monday — Friday · 9:00 to 6:00</span>
+        </div>
+        <div class="meta-row">
+          <span class="lbl">Studio</span>
+          <span class="val">Beverly Hills · Manhattan · Remote</span>
+        </div>
+        <div class="meta-row">
+          <span class="lbl">Direct</span>
+          <span class="val">+1 (310) 555 0182</span>
+        </div>
+        <div class="meta-row">
+          <span class="lbl">Correspondence</span>
+          <span class="val">office@folkwilliams.com</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="event.preventDefault(); handleSubmit(this);">
+      <div class="form-title">Schedule a Consultation</div>
+      <div class="form-sub">Tell us a little about yourself.</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" required placeholder="Eleanor">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" required placeholder="Hartwell">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" required placeholder="eleanor@example.com">
+      </div>
+
+      <div class="field">
+        <label>Service of Interest</label>
+        <select required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Tax Preparation</option>
+          <option>Accounting Services</option>
+          <option>Business Management</option>
+          <option>Not Yet Sure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>How can we help?</label>
+        <textarea rows="3" placeholder="A short note about your situation."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Request Consultation <span class="arrow">→</span></button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 Folk Williams Financial Management. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Disclosures</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+
+    // Hero parallax
+    const shape = document.getElementById('heroShape');
+    const visual = document.getElementById('heroVisual');
+    if (shape && window.scrollY < window.innerHeight) {
+      shape.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+      if (visual) visual.style.transform = `translateY(${window.scrollY * -0.04}px)`;
+    }
+  }, { passive: true });
+
+
+  // Current page active
+const currentPage =
+    window.location.pathname.split('/').pop() || 'index.html';
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
+
+  // Mobile menu
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+
+  // Form
+  function handleSubmit(form) {
+    const btn = form.querySelector('button');
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Thank you — we will be in touch ✓';
+    btn.style.background = 'var(--accent-soft)';
+    form.reset();
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 4000);
+  }
+</script>
+</body>
+</html>

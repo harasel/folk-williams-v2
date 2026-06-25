@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="FWFM_Logo.png" type="image/x-icon">
+<title>Premium Business Management — Folk Williams Financial Management</title>
+<meta name="description" content="A private financial office for elite performers, corporate leaders, wealth creators, and legacy planners. Discreet, end-to-end business management by Folk Williams." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #0a2e4d;
+    --ocean-deep: #051a2e;
+    --ocean-mid: #14416b;
+    --accent: #06a5cc;
+    --accent-soft: #6dc8dc;
+    --cream: #f6f0e4;
+    --cream-warm: #efe5d2;
+    --sand: #dccfb4;
+    --sand-deep: #b8a784;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --white: #ffffff;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max: 1280px;
+    --transition: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--ocean); color: var(--cream); }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 7px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all .5s var(--transition);
+    background: transparent;
+  }
+  .nav.scrolled {
+    background: rgba(246, 240, 228, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 7px 48px;
+    border-bottom: 1px solid rgba(10, 46, 77, 0.08);
+  }
+  .nav-brand { display: flex; align-items: center; }
+  .nav-brand svg { width: 36px; height: 36px; }
+  .brand-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: var(--ocean);
+    line-height: 1.1;
+  }
+  .brand-text small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 38px; align-items: center; }
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    color: var(--ocean);
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 0; height: 1px; background: var(--accent);
+    transition: width .4s var(--transition);
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links .nav-cta {
+    padding: 11px 22px;
+    border: 1px solid var(--ocean);
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .4s var(--transition);
+    background: transparent;
+    cursor: pointer;
+    color: var(--ocean);
+  }
+  .nav-links .nav-cta:hover { background: var(--ocean); color: var(--cream); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ocean); margin: 5px 0; transition: .3s; }
+
+
+
+
+
+
+  .nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width .3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-cta::after {
+    display: none !important;
+}
+
+
+
+
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 150px 48px 100px;
+    overflow: hidden;
+  }
+  .hero-bg-shape {
+    position: absolute;
+    top: -10%; right: -15%;
+    width: 70vw; height: 110vh;
+    opacity: 0.35;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .hero-grid-lines { position: absolute; inset: 0; pointer-events: none; opacity: .4; }
+  .hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .crumb {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--ocean); font-weight: 500;
+    margin-bottom: 36px;
+  }
+  .crumb::before { content: ''; width: 36px; height: 1px; background: var(--accent); }
+  .crumb a { color: var(--muted); }
+  .crumb span { color: var(--accent); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(46px, 6.8vw, 92px);
+    line-height: 1.02;
+    font-weight: 400;
+    color: var(--ocean);
+    letter-spacing: -1.5px;
+    margin-bottom: 36px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .hero-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ocean-mid);
+    line-height: 1.7;
+    margin-bottom: 44px;
+    max-width: 520px;
+  }
+  .cta-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 34px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .5s var(--transition);
+    border: 1px solid transparent;
+    font-family: var(--sans);
+  }
+  .btn-primary { background: var(--ocean); color: var(--cream); }
+  .btn-primary:hover { background: var(--ocean-deep); transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(10,46,77,.4); }
+  .btn-secondary { background: transparent; color: var(--ocean); border-color: var(--ocean); }
+  .btn-secondary:hover { background: var(--ocean); color: var(--cream); }
+  .btn .arrow { transition: transform .4s var(--transition); }
+  .btn:hover .arrow { transform: translateX(5px); }
+
+  /* hero visual — editorial collage */
+  .hero-visual { position: relative; aspect-ratio: 4/5; width: 100%; }
+  .hv-frame {
+    position: absolute; inset: 0;
+    border: 1px solid var(--sand);
+    border-radius: 4px;
+  }
+  .hv-card {
+    position: absolute;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -20px rgba(10,46,77,.25);
+  }
+  .hv-card.dark {
+    top: 6%; left: 8%; width: 64%; aspect-ratio: 1/1.15;
+    background: var(--ocean);
+    color: var(--cream);
+    padding: 30px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .hv-card.dark .lbl {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: .75;
+  }
+  .hv-card.dark .num {
+    font-family: var(--serif);
+    font-size: 96px; line-height: 1; color: var(--accent-soft);
+    margin-top: 14px;
+  }
+  .hv-card.dark .ttl {
+    font-family: var(--serif); font-size: 20px; line-height: 1.3;
+  }
+  .hv-card.cream {
+    bottom: 4%; right: 0; width: 58%;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    padding: 26px;
+  }
+  .hv-card.cream .tag {
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  .hv-card.cream .quote {
+    font-family: var(--serif); font-style: italic; font-size: 17px;
+    line-height: 1.5; color: var(--ocean);
+  }
+  .hv-card.cream .sig {
+    margin-top: 16px; font-size: 10px; letter-spacing: 1.5px;
+    color: var(--muted); text-transform: uppercase;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section { padding: 130px 48px; position: relative; }
+  .container { max-width: var(--max); margin: 0 auto; }
+  .section-head { margin-bottom: 80px; max-width: 760px; }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .section-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--accent); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--ocean);
+    letter-spacing: -1px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-intro {
+    font-size: 17px; line-height: 1.7; color: var(--muted);
+    margin-top: 24px; max-width: 620px;
+  }
+
+  /* ===== PHILOSOPHY (light band) ===== */
+  .philosophy { background: var(--white); }
+  .phil-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;
+  }
+  .phil-quote {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.25;
+    color: var(--ocean);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+  }
+  .phil-quote::before {
+    content: '“'; display: block; font-size: 120px; line-height: 0.5;
+    color: var(--accent); margin-bottom: 30px; font-style: normal;
+  }
+  .phil-sig {
+    margin-top: 36px;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+  }
+  .phil-pillars { display: grid; gap: 28px; }
+  .pillar {
+    padding: 28px 0;
+    border-top: 1px solid var(--sand);
+    display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start;
+  }
+  .pillar:last-child { border-bottom: 1px solid var(--sand); }
+  .pillar-num {
+    font-family: var(--serif); font-style: italic; color: var(--accent);
+    font-size: 22px;
+  }
+  .pillar h4 {
+    font-family: var(--serif); font-size: 22px; color: var(--ocean);
+    font-weight: 500; margin-bottom: 8px;
+  }
+  .pillar p { font-size: 14.5px; color: var(--muted); line-height: 1.65; }
+
+  /* ===== PATHWAYS (dark — full ====) ===== */
+  .pathway {
+    background: var(--ocean-deep);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .pathway::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .pathway .section-title { color: var(--cream); }
+  .pathway .section-intro { color: rgba(246,240,228,.7); }
+  .pathway .section-eyebrow { color: var(--accent-soft); }
+  .pathway .section-eyebrow::before { background: var(--accent-soft); }
+
+  .pathway-stack { display: grid; gap: 24px; }
+  .path-row {
+    border: 1px solid rgba(246,240,228,.12);
+    border-radius: 4px;
+    padding: 56px 56px;
+    display: grid;
+    grid-template-columns: 80px 1.1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+    transition: all .6s var(--transition);
+    background: linear-gradient(180deg, rgba(246,240,228,.02), rgba(246,240,228,0));
+    position: relative;
+    overflow: hidden;
+  }
+  .path-row::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 0% 0%, rgba(6,165,204,.18), transparent 50%);
+    opacity: 0; transition: opacity .6s var(--transition); pointer-events: none;
+  }
+  .path-row:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .path-row:hover::after { opacity: 1; }
+  .path-row > * { position: relative; z-index: 1; }
+  .path-num-lg {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 48px;
+    color: var(--accent-soft);
+    line-height: 1;
+  }
+  .path-head .tag {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent-soft); font-weight: 600; margin-bottom: 18px;
+  }
+  .path-head h3 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.4vw, 42px);
+    line-height: 1.15;
+    color: var(--cream);
+    margin-bottom: 18px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+  .path-head p {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; line-height: 1.55;
+    color: rgba(246,240,228,.75);
+    max-width: 340px;
+  }
+  .path-body p {
+    font-size: 15.5px; line-height: 1.75;
+    color: rgba(246,240,228,.85);
+    margin-bottom: 28px;
+  }
+  .path-body ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 28px;
+  }
+  .path-body li {
+    font-size: 13.5px;
+    color: var(--cream);
+    padding: 10px 0 10px 18px;
+    border-top: 1px solid rgba(246,240,228,.12);
+    position: relative;
+  }
+  .path-body li::before {
+    content: ''; position: absolute; left: 0; top: 18px;
+    width: 8px; height: 1px; background: var(--accent);
+  }
+
+  /* ===== SERVICE STACK (cream band) ===== */
+  .stack-sec { background: var(--cream); }
+  .stack-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .stack-card {
+    background: var(--white);
+    padding: 44px 36px;
+    border-radius: 4px;
+    border: 1px solid var(--sand);
+    transition: all .5s var(--transition);
+    display: flex; flex-direction: column;
+    min-height: 340px;
+  }
+  .stack-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 30px 50px -20px rgba(10,46,77,.18); }
+  .stack-card .ic {
+    width: 44px; height: 44px; color: var(--ocean); margin-bottom: 26px;
+    transition: color .4s var(--transition);
+  }
+  .stack-card:hover .ic { color: var(--accent); }
+  .stack-card h4 {
+    font-family: var(--serif); font-size: 22px; color: var(--ocean);
+    font-weight: 500; margin-bottom: 12px; line-height: 1.25;
+  }
+  .stack-card p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+  .stack-card .meta {
+    margin-top: auto; padding-top: 24px;
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+  }
+
+  /* ===== PROCESS ===== */
+  .process { background: var(--white); }
+  .process-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--sand);
+    border-bottom: 1px solid var(--sand);
+  }
+  .step {
+    padding: 50px 32px 56px;
+    border-right: 1px solid var(--sand);
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 30px;
+  }
+  .step h4 {
+    font-family: var(--serif); font-size: 26px; color: var(--ocean);
+    font-weight: 500; line-height: 1.2; margin-bottom: 16px;
+  }
+  .step p { font-size: 14.5px; color: var(--muted); line-height: 1.7; }
+
+  /* ===== TESTIMONIAL ===== */
+  .testimonial {
+    background: var(--cream-warm);
+    padding: 140px 48px;
+  }
+  .test-inner {
+    max-width: 980px; margin: 0 auto; text-align: center;
+  }
+  .test-mark {
+    font-family: var(--serif); color: var(--accent);
+    font-size: 80px; line-height: 0.4; margin-bottom: 30px;
+  }
+  .test-quote {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.3;
+    color: var(--ocean);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+  }
+  .test-quote em { font-style: italic; color: var(--accent); }
+  .test-sig {
+    margin-top: 44px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+  }
+  .test-sig em { font-style: normal; color: var(--ocean); }
+
+  /* ===== CTA ===== */
+  .cta-final {
+    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
+    color: var(--cream);
+    padding: 160px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg { position: absolute; inset: 0; opacity: .15; pointer-events: none; }
+  .cta-inner {
+    max-width: 900px; margin: 0 auto; text-align: center; position: relative;
+  }
+  .cta-final h2 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+    margin-bottom: 28px;
+  }
+  .cta-final h2 em { font-style: italic; color: var(--accent-soft); }
+  .cta-final p {
+    font-family: var(--serif); font-style: italic;
+    font-size: 19px;
+    color: rgba(246,240,228,.8);
+    max-width: 560px; margin: 0 auto 50px;
+    line-height: 1.6;
+  }
+  .cta-final .btn-primary { background: var(--accent); color: var(--ocean-deep); }
+  .cta-final .btn-primary:hover { background: var(--accent-soft); }
+  .cta-final .btn-secondary { color: var(--cream); border-color: rgba(246,240,228,.4); }
+  .cta-final .btn-secondary:hover { background: var(--cream); color: var(--ocean); border-color: var(--cream); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ocean-deep);
+    color: rgba(246,240,228,.6);
+    padding: 50px 48px;
+    border-top: 1px solid rgba(246,240,228,.08);
+  }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+    font-size: 12px; letter-spacing: 1px;
+  }
+  .footer-inner a { transition: color .3s; }
+  .footer-inner a:hover { color: var(--accent-soft); }
+  .footer-links { display: flex; gap: 30px; }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 1s var(--transition), transform 1s var(--transition);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .9s var(--transition), transform .9s var(--transition);
+  }
+  .reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.in > *:nth-child(1) { transition-delay: .05s; }
+  .reveal-stagger.in > *:nth-child(2) { transition-delay: .15s; }
+  .reveal-stagger.in > *:nth-child(3) { transition-delay: .25s; }
+  .reveal-stagger.in > *:nth-child(4) { transition-delay: .35s; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .nav, .nav.scrolled { padding: 18px 28px; }
+    section { padding: 90px 28px; }
+    .hero { padding: 130px 28px 80px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+    .hero-visual { max-width: 480px; }
+    .phil-grid { grid-template-columns: 1fr; gap: 60px; }
+    .path-row { grid-template-columns: 60px 1fr; gap: 30px; padding: 40px 32px; }
+    .path-body { grid-column: 1 / -1; padding-left: 90px; }
+    .stack-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .step { border-right: none; border-bottom: 1px solid var(--sand); }
+    .step:nth-child(odd) { border-right: 1px solid var(--sand); }
+    .step:nth-last-child(-n+2) { border-bottom: none; }
+    .testimonial, .cta-final { padding: 100px 28px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--cream); padding: 28px;
+      border-bottom: 1px solid var(--sand);
+      gap: 22px;
+    }
+    .path-row { padding: 32px 24px; grid-template-columns: 1fr; gap: 20px; }
+    .path-body { padding-left: 0; }
+    .path-body ul { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .step { border-right: none !important; border-bottom: 1px solid var(--sand); }
+    .step:last-child { border-bottom: none; }
+    .hero h1 { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================== NAV ====================== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand" aria-label="Folk Williams Financial Management">
+    <!-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#06a5cc" d="M20 10 L40 10 C28 14 22 22 20 32 Z"/>
+      <path fill="#06a5cc" d="M80 10 L60 10 C72 14 78 22 80 32 Z"/>
+      <path fill="#06a5cc" d="M20 35 C30 35 35 40 35 50 L35 68 C35 78 32 84 26 88 C22 84 20 78 20 68 Z"/>
+      <path fill="#06a5cc" d="M80 35 C70 35 65 40 65 50 L65 68 C65 78 68 84 74 88 C78 84 80 78 80 68 Z"/>
+      <path fill="#06a5cc" d="M50 4 C44 10 42 18 42 28 L42 72 C42 82 40 88 35 94 C44 92 50 84 50 72 L50 28 C50 18 52 12 58 6 C56 4 53 4 50 4 Z"/>
+      <path fill="#06a5cc" d="M50 4 C56 10 58 18 58 28 L58 72 C58 82 60 88 65 94 C56 92 50 84 50 72 Z"/>
+    </svg> -->
+    <img src="FWFM_Logo.png" alt="Logo" style="width: 60px; height: auto;">
+    <span class="brand-text">
+      Folk Williams
+      <small>Financial Management</small>
+    </span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a class="nav-link" href="folk-williams-financial.html#services">Services</a>
+    <a class="nav-link" href="#pathways">Clients</a>
+    <a class="nav-link" href="#process">Process</a>
+    <a class="nav-link" href="#philosophy">Philosophy</a>
+    <a class="nav-link" href="folk-williams-business-management.html">Business Management</a>
+    <a href="#contact" class="nav-cta">Schedule Consultation</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<header class="hero">
+  <svg class="hero-bg-shape" id="heroShape" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0a2e4d" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0.04"/>
+      </linearGradient>
+      <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#06a5cc" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <circle cx="450" cy="280" r="260" fill="url(#g1)"/>
+    <circle cx="380" cy="500" r="180" fill="url(#g2)"/>
+    <circle cx="300" cy="200" r="2" fill="#06a5cc"/>
+    <circle cx="500" cy="600" r="3" fill="#0a2e4d"/>
+  </svg>
+  <svg class="hero-grid-lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="240" y1="0" x2="240" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+    <line x1="720" y1="0" x2="720" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+    <line x1="1200" y1="0" x2="1200" y2="900" stroke="#0a2e4d" stroke-width="0.5" stroke-opacity="0.08"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="crumb"><a href="folk-williams-financial.html">Home</a> · <span>Business Management</span></div>
+      <h1>A private office<br>for the <em>complex</em><br>financial life.</h1>
+      <p class="hero-sub">Coordinating tax strategy, financial administration, cash flow oversight, and long-term planning for founders, executives, performers, and families.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Schedule Private Consultation <span class="arrow">→</span></a>
+        <a href="#pathways" class="btn btn-secondary">See the Pathways</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="hv-frame"></div>
+      <div class="hv-card dark">
+        <div>
+          <div class="lbl">By Invitation</div>
+          <div class="num">04</div>
+        </div>
+        <div class="ttl">Pathways. One quiet, deliberate standard of care.</div>
+      </div>
+      <div class="hv-card cream">
+        <div class="tag">House Principle</div>
+        <div class="quote">"True business management is the freedom to think about your work, and nothing else."</div>
+        <div class="sig">— Folk Williams</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====================== PHILOSOPHY ====================== -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:60px;">
+      <div class="section-eyebrow">The Practice</div>
+      <h2 class="section-title">More than an advisor. A <em>standing presence</em> in your financial life.</h2>
+    </div>
+
+    <div class="phil-grid">
+      <div class="reveal">
+        <div class="phil-quote">A business manager is what a client retains when they no longer wish to negotiate with their own money.</div>
+        <div class="phil-sig">— Folk Williams · Founding Principal</div>
+      </div>
+
+      <div class="phil-pillars reveal-stagger">
+        <div class="pillar">
+          <div class="pillar-num">i.</div>
+          <div>
+            <h4>Discretion as a discipline</h4>
+            <p>Every relationship is held within a closed practice. We do not publish names, do not solicit referrals, and structure access so that even your most sensitive holdings remain quiet.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">ii.</div>
+          <div>
+            <h4>One desk, one signature</h4>
+            <p>You speak with a senior principal — not a rotating team. The same hand reviews your bills, your returns, your trusts, your investments. Continuity is the work.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">iii.</div>
+          <div>
+            <h4>Fiduciary by structure</h4>
+            <p>We accept no commissions, no referral fees, no third-party compensation. Our only revenue comes from the client we serve. That alignment is not optional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PATHWAYS ====================== -->
+<section class="pathway" id="pathways">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">The Four Pathways</div>
+      <h2 class="section-title">Four lives. Four <em>structures</em>. The same standard of care.</h2>
+      <p class="section-intro">Business Management is never a template. Each engagement is shaped around the architecture of a single life — its rhythms, its risks, and the legacy it intends to build.</p>
+    </div>
+
+    <div class="pathway-stack reveal-stagger">
+
+      <article class="path-row">
+        <div class="path-num-lg">01</div>
+        <div class="path-head">
+          <div class="tag">Athletes · Artists · Public Figures</div>
+          <h3>Elite Performers</h3>
+          <p>Concentrated income. Brief windows. Lives lived under permanent observation.</p>
+        </div>
+        <div class="path-body">
+          <p>We design financial systems that capture peak-earning years and protect them across the long arc of a career — and the longer arc that follows. Privacy is structural, not promised.</p>
+          <ul>
+            <li>Endorsement & royalty management</li>
+            <li>Tour, residency & production accounting</li>
+            <li>Loan-out entity & union compliance</li>
+            <li>Career transition & post-prime planning</li>
+            <li>Privacy-first banking & travel logistics</li>
+            <li>Family office coordination</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-row">
+        <div class="path-num-lg">02</div>
+        <div class="path-head">
+          <div class="tag">C-Suite · Board Members · Senior Operators</div>
+          <h3>Corporate Leaders</h3>
+          <p>Equity compensation, governance scrutiny, and a personal balance sheet that moves with the share price.</p>
+        </div>
+        <div class="path-body">
+          <p>We translate RSUs, options, deferred compensation, and 10b5-1 plans into a coherent personal picture — coordinated with your counsel, your board calendar, and your blackout windows.</p>
+          <ul>
+            <li>RSU, ISO & NQSO exercise strategy</li>
+            <li>10b5-1 plan design & administration</li>
+            <li>Section 16 & insider compliance support</li>
+            <li>Concentrated stock risk management</li>
+            <li>Charitable & donor-advised structuring</li>
+            <li>Cross-jurisdiction & expatriate tax</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-row">
+        <div class="path-num-lg">03</div>
+        <div class="path-head">
+          <div class="tag">Founders · Operators · Principal Owners</div>
+          <h3>Wealth Creators</h3>
+          <p>First-generation capital built from a business you assembled with your own hands.</p>
+        </div>
+        <div class="path-body">
+          <p>We separate the business balance sheet from the personal one, prepare the entity for the inevitable transaction, and stand beside you in the unfamiliar years that follow a liquidity event.</p>
+          <ul>
+            <li>Entity structuring & QSBS strategy</li>
+            <li>Owner compensation & distribution design</li>
+            <li>Pre-transaction tax & basis planning</li>
+            <li>M&A and partial-sale coordination</li>
+            <li>Post-exit wealth integration</li>
+            <li>Second-act capital deployment</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="path-row">
+        <div class="path-num-lg">04</div>
+        <div class="path-head">
+          <div class="tag">Families · Trusts · Private Foundations</div>
+          <h3>Legacy Planners</h3>
+          <p>Multi-generational stewardship of capital — and the values that the capital is meant to carry.</p>
+        </div>
+        <div class="path-body">
+          <p>We serve as the steady financial center for families navigating wealth across decades. Our work spans trust administration, philanthropic strategy, and the quiet education of the next generation.</p>
+          <ul>
+            <li>Trust & estate administration</li>
+            <li>Family governance & rising-generation education</li>
+            <li>Foundation & philanthropic strategy</li>
+            <li>Generational tax efficiency</li>
+            <li>Real property & private holdings oversight</li>
+            <li>Coordination with legal & investment counsel</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SERVICE STACK ====================== -->
+<section class="stack-sec">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">What the Office Does</div>
+      <h2 class="section-title">A complete financial <em>back office</em>, quietly run.</h2>
+      <p class="section-intro">Every engagement begins with a written charter. From there, we assume responsibility for the operating mechanics of your financial life — the work most clients never wish to perform again.</p>
+    </div>
+
+    <div class="stack-grid reveal-stagger">
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <rect x="8" y="10" width="28" height="28" rx="2"/>
+          <line x1="8" y1="18" x2="36" y2="18"/>
+          <line x1="14" y1="6" x2="14" y2="12"/>
+          <line x1="30" y1="6" x2="30" y2="12"/>
+          <circle cx="22" cy="28" r="1.5" fill="currentColor"/>
+        </svg>
+        <h4>Bill pay & cash management</h4>
+        <p>Vendor onboarding, weekly disbursements, household payroll, and a clear ledger you can review at any moment of the month.</p>
+        <div class="meta">Core Operations</div>
+      </div>
+
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M6 36 L18 24 L26 30 L40 14" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M32 14 L40 14 L40 22"/>
+          <line x1="6" y1="38" x2="40" y2="38"/>
+        </svg>
+        <h4>Reporting & analytics</h4>
+        <p>Consolidated monthly statements across entities, accounts, and asset classes — designed to be read by you, not just your accountant.</p>
+        <div class="meta">Financial Visibility</div>
+      </div>
+
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M22 6 L34 12 V24 C34 32 28 36 22 38 C16 36 10 32 10 24 V12 Z" stroke-linejoin="round"/>
+          <path d="M16 22 L20 26 L28 18" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h4>Tax planning & filing</h4>
+        <p>Year-round strategy and execution. Federal, state, and trust returns prepared in-house, never outsourced to a seasonal team.</p>
+        <div class="meta">Senior-Led</div>
+      </div>
+
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <circle cx="22" cy="22" r="14"/>
+          <path d="M22 10 V22 L30 26"/>
+        </svg>
+        <h4>Advisor coordination</h4>
+        <p>We hold the center of the table — attorneys, investment counsel, insurance brokers, and bankers all reporting into a single narrative.</p>
+        <div class="meta">The Quarterback</div>
+      </div>
+
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <rect x="8" y="14" width="28" height="20" rx="2"/>
+          <path d="M14 14 V10 L22 6 L30 10 V14"/>
+          <line x1="18" y1="22" x2="26" y2="22"/>
+          <line x1="18" y1="28" x2="26" y2="28"/>
+        </svg>
+        <h4>Entity & trust administration</h4>
+        <p>Annual minutes, K-1 distribution, trustee accounting, beneficiary reporting — the unglamorous work that keeps structures intact.</p>
+        <div class="meta">Quiet Compliance</div>
+      </div>
+
+      <div class="stack-card">
+        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M8 34 L22 10 L36 34 Z" stroke-linejoin="round"/>
+          <line x1="22" y1="20" x2="22" y2="28"/>
+          <circle cx="22" cy="32" r="1" fill="currentColor"/>
+        </svg>
+        <h4>Risk & insurance review</h4>
+        <p>Annual review of property, liability, life, and umbrella coverage against your real exposure — without selling a single policy ourselves.</p>
+        <div class="meta">Independent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROCESS ====================== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">How We Begin</div>
+      <h2 class="section-title">An <em>unhurried</em> onboarding, in four movements.</h2>
+      <p class="section-intro">A premium business management relationship is built slowly. The first ninety days are dedicated to understanding — yours of us, and ours of you.</p>
+    </div>
+
+    <div class="process-grid reveal-stagger">
+      <div class="step">
+        <div class="step-num">i.</div>
+        <h4>Introduction</h4>
+        <p>A confidential first conversation. We listen to the architecture of your life — income, obligations, ambitions, anxieties — and decide together whether we are the right office.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">ii.</div>
+        <h4>Discovery</h4>
+        <p>A structured review of every account, entity, document, and existing advisor. We map the present state with precision before suggesting a single change.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">iii.</div>
+        <h4>Charter</h4>
+        <p>A written engagement that defines scope, cadence, decision authority, and reporting. Nothing about the relationship is left to interpretation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">iv.</div>
+        <h4>Stewardship</h4>
+        <p>Operations begin. Monthly reporting, quarterly reviews, annual planning sessions — and a direct line you may use at any hour, on any day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TESTIMONIAL ====================== -->
+<section class="testimonial">
+  <div class="test-inner reveal">
+    <div class="test-mark">“</div>
+    <div class="test-quote">After twenty years of trying to remember which advisor handled what, I now have <em>one number to call</em>. The mental quiet of that, alone, is worth the engagement.</div>
+    <div class="test-sig">— A client of seventeen years · <em>Founder, private holding company</em></div>
+  </div>
+</section>
+
+<!-- ====================== CTA ====================== -->
+<section class="cta-final" id="contact">
+  <svg class="cta-bg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="cBg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#06a5cc" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#06a5cc" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="1100" cy="200" r="320" fill="url(#cBg)"/>
+    <circle cx="200" cy="600" r="240" fill="url(#cBg)"/>
+  </svg>
+
+  <div class="cta-inner reveal">
+    <div class="section-eyebrow" style="color: var(--accent-soft); justify-content: center;">By Appointment Only</div>
+    <h2>Begin a <em>private conversation</em>.</h2>
+    <p>Our business management practice accepts a limited number of new relationships each year. We respond personally to every inquiry within one business day.</p>
+    <div class="cta-row" style="justify-content: center;">
+      <a href="folk-williams-financial.html#contact" class="btn btn-primary">Request Introduction <span class="arrow">→</span></a>
+      <a href="folk-williams-financial.html" class="btn btn-secondary">Return to Folk Williams</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 Folk Williams Financial Management. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Disclosures</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    const shape = document.getElementById('heroShape');
+    const visual = document.getElementById('heroVisual');
+    if (shape && window.scrollY < window.innerHeight) {
+      shape.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+      if (visual) visual.style.transform = `translateY(${window.scrollY * -0.04}px)`;
+    }
+  }, { passive: true });
+
+
+  // Current page active
+const currentPage =
+    window.location.pathname.split('/').pop() || 'index.html';
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
+
+
+
+
+
+
+
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
